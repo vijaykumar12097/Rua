@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rua Al Madina</title>
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/al-ansar-Logo_Gold.png') }}" />
+  <!-- Bootstrap CSS -->
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <style>
+    @font-face {
+      font-family: "Majalla";
+      src: url("{{ url_for('static', filename='fonts/majalla.ttf') }}") format("truetype");
+      font-weight: normal;
+    }
+
+    @font-face {
+      font-family: "Majalla Bold";
+      src: url("{{ url_for('static', filename='fonts/majallab.ttf') }}") format("truetype");
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+    <!-- Background Section -->
+    <div class="bg-section d-flex justify-content-center align-items-center text-white">
+      <!-- <h2>Main Content Area</h2> -->
+        <!-- <img src="{{ url_for('static', filename='img/demo.png') }}" class="zone-layer" id="demo"> -->
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-design"></div>
+
+      <div class="sidebar-content">
+
+        <!-- Super Blocks -->
+        <div class="cluster" data-type="checkbox">
+          <div class="cluster-title">Super Blocks</div>
+
+          <label class="toggle master">
+            <input type="checkbox" data-img="super_blocks_all.png" data-zone="super_blocks" />
+            <span></span> All ON/OFF
+          </label>
+
+          <label class="toggle"><input type="checkbox" data-img="sb02.png" data-zone="sb02" /><span></span> SB02</label>
+          <label class="toggle"><input type="checkbox" data-img="sb03.png" data-zone="sb03" /><span></span> SB03</label>
+          <label class="toggle"><input type="checkbox" data-img="sb04.png" data-zone="sb04" /><span></span> SB04</label>
+          <label class="toggle"><input type="checkbox" data-img="al_ansar.png" data-zone="al_ansar" /><span></span>
+            Al-Ansar</label>
+          <label class="toggle"><input type="checkbox" data-img="sb07.png" data-zone="sb07" /><span></span> SB07</label>
+          <label class="toggle"><input type="checkbox" data-img="sb08.png" data-zone="sb08" /><span></span> SB08</label>
+        </div>
+
+        <!-- Districts -->
+        <div class="cluster" data-type="checkbox">
+          <div class="cluster-title">Districts</div>
+
+          <label class="toggle master">
+            <input type="checkbox" data-img="districts.png" data-zone="districts" />
+            <span></span> All ON/OFF
+          </label>
+
+          <label class="toggle"><input type="checkbox" data-img="d01.png" data-zone="d01" /><span></span> D01</label>
+          <label class="toggle"><input type="checkbox" data-img="d09.png" data-zone="d09" /><span></span> D09</label>
+          <label class="toggle"><input type="checkbox" data-img="d10.png" data-zone="d10" /><span></span> D10</label>
+        </div>
+        <!-- Crowd Corridors (Buttons Only) -->
+        <div class="cluster" data-type="button">
+          <div class="cluster-title">Crowd Corridors</div>
+
+          <label class="toggle master">
+            <input type="checkbox" data-img="" data-zone="crowd_corridors_all" />
+            <span></span> All ON/OFF
+          </label>
+
+          <div class="corridor-options">
+            <button class="corridor-btn" data-img="" data-zone="crowd_corridor_1">1</button>
+            <button class="corridor-btn" data-img="" data-zone="crowd_corridor_2">2</button>
+            <button class="corridor-btn" data-img="" data-zone="crowd_corridor_3">3</button>
+            <button class="corridor-btn" data-img="" data-zone="crowd_corridor_4">4</button>
+            <button class="corridor-btn" data-img="" data-zone="crowd_corridor_5">5</button>
+          </div>
+        </div>
+        <!-- Roads & Surroundings -->
+        <div class="cluster" data-type="checkbox">
+          <div class="cluster-title">Roads & Surroundings</div>
+
+          <label class="toggle master">
+            <input type="checkbox" data-img="" data-zone="roadnames_surroundings" />
+            <span></span> All ON/OFF
+          </label>
+
+          <label class="toggle"><input type="checkbox" data-img=""
+              data-zone="king_abdulaziz_road" /><span></span> King Abdulaziz
+            Road</label>
+          <label class="toggle"><input type="checkbox" data-img=""
+              data-zone="haram_boulevard" /><span></span> Haram
+            Boulevard</label>
+          <label class="toggle"><input type="checkbox" data-img=""
+              data-zone="al_amidah_road" /><span></span> Al Amidah Road</label>
+          <label class="toggle"><input type="checkbox" data-img=""
+              data-zone="prince_mohammed_bin_salman_road" /><span></span> Prince Mohammed
+            Bin</label>
+          <label class="toggle"><input type="checkbox" data-img=""
+              data-zone="salman_bin_abdulaziz_road" /><span></span> Salman Bin
+            Abdulaziz Road</label>
+          <label class="toggle"><input type="checkbox" data-img=""
+              data-zone="substation_and_utilities" /><span></span> Substation & Utilities</label>
+          <label class="toggle"><input type="checkbox" data-img="masjid_al_haram.png"
+              data-zone="masjid_al_haram" /><span></span> Masjid Al Haram</label>
+          <label class="toggle"><input type="checkbox" data-img=""
+              data-zone="district_cooling_plant_1" /><span></span> District
+            Cooling Plant 1</label>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+  <script>
+   document.addEventListener("DOMContentLoaded", () => {
+  const allClusters = document.querySelectorAll(".cluster");
+  const bgSection = document.querySelector(".bg-section");
+  const baseUrl = "{{ url_for('static', filename='img/') }}";
+  const defaultImg = "rua.png";
+
+  // ✅ TWO Raspberry Pi URLs
+  const API_BASE_URL_1 = "http://rua.local:5000";
+  const API_BASE_URL_2 = "http://ruaextender.local:5000";
+
+  // ✅ Zone Mapping
+  const PI_1_ZONES = [
+    "sb02",
+    "sb03",
+    "sb04",
+    "al_ansar",
+    "sb07",
+    "sb08",
+    "d01",
+    "d09",
+    "d10",
+    "districts",
+    "super_blocks"
+  ];
+
+  const PI_2_ZONES = [
+    "crowd_corridor_1",
+    "crowd_corridor_2",
+    "crowd_corridor_3",
+    "crowd_corridor_4",
+    "crowd_corridor_5",
+    "king_abdulaziz_road",
+    "haram_boulevard",
+    "al_amidah_road",
+    "prince_mohammed_bin_salman_road",
+    "salman_bin_abdulaziz_road",
+    "substation_and_utilities",
+    "masjid_al_haram",
+    "district_cooling_plant_1",
+    "crowd_corridors_all",
+    "roadnames_surroundings"
+  ];
+
+  // ✅ Decide which Pi to call
+  function getApiBaseUrl(zone) {
+    if (PI_1_ZONES.includes(zone)) return API_BASE_URL_1;
+    if (PI_2_ZONES.includes(zone)) return API_BASE_URL_2;
+
+    console.warn("Unknown zone:", zone);
+    return API_BASE_URL_1; // fallback
+  }
+
+  function updateBackground(imgName) {
+    bgSection.style.backgroundImage = `url('${baseUrl}${imgName || defaultImg}')`;
+  }
+
+  function deactivateEverything() {
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('.corridor-btn').forEach(btn => btn.classList.remove("active"));
+  }
+
+  // ✅ Turn OFF all zones on BOTH Pis
+  async function turnOffAll() {
+    try {
+      await Promise.all([
+        fetch(`${API_BASE_URL_1}/off_all`, { method: 'POST' }),
+        fetch(`${API_BASE_URL_2}/off_all`, { method: 'POST' })
+      ]);
+    } catch (err) {
+      console.error("Error turning off all:", err);
+    }
+  }
+
+  // ✅ Turn ON zone on correct Pi
+  async function turnOnZone(zoneName) {
+    if (!zoneName) return;
+
+    const baseUrl = getApiBaseUrl(zoneName);
+
+    try {
+      await fetch(`${baseUrl}/on_zone/${zoneName}`, { method: 'POST' });
+    } catch (err) {
+      console.error("Error turning on zone:", err);
+    }
+  }
+
+  allClusters.forEach((cluster) => {
+    const masterToggle = cluster.querySelector('.master input');
+
+    // --- MASTER TOGGLE ---
+    masterToggle.addEventListener("click", async (e) => {
+      const isNowChecked = e.target.checked;
+      const masterImg = e.target.dataset.img;
+      const clusterZone = e.target.dataset.zone;
+
+      deactivateEverything();
+
+      if (isNowChecked) {
+        e.target.checked = true;
+
+        if (cluster.dataset.type === "checkbox") {
+          cluster.querySelectorAll('.toggle:not(.master) input').forEach(cb => cb.checked = true);
+        } else {
+          cluster.querySelectorAll('.corridor-btn').forEach(btn => btn.classList.add("active"));
+        }
+
+        updateBackground(masterImg);
+
+        // ✅ CORE LOGIC
+        await turnOffAll();
+        await turnOnZone(clusterZone);
+
+      } else {
+        updateBackground(null);
+
+        // ✅ Turn everything OFF
+        await turnOffAll();
+      }
+    });
+
+    // --- CHILD TOGGLES (Checkbox type) ---
+    if (cluster.dataset.type === "checkbox") {
+      const children = cluster.querySelectorAll('.toggle:not(.master) input');
+
+      children.forEach(child => {
+        child.addEventListener("click", async (e) => {
+          const isNowChecked = e.target.checked;
+          const childImg = e.target.dataset.img;
+          const zoneName = e.target.dataset.zone;
+
+          deactivateEverything();
+
+          if (isNowChecked) {
+            e.target.checked = true;
+            updateBackground(childImg);
+
+            // ✅ CORE LOGIC
+            await turnOffAll();
+            await turnOnZone(zoneName);
+
+          } else {
+            updateBackground(null);
+
+            // ✅ Turn everything OFF
+            await turnOffAll();
+          }
+        });
+      });
+    }
+
+    // --- CROWD CORRIDOR BUTTONS ---
+    if (cluster.dataset.type === "button") {
+      const buttons = cluster.querySelectorAll(".corridor-btn");
+
+      buttons.forEach(btn => {
+        btn.addEventListener("click", async () => {
+          const isNowActive = btn.classList.contains("active");
+          const btnImg = btn.dataset.img;
+          const corridorZone = btn.dataset.zone;
+
+          deactivateEverything();
+
+          if (!isNowActive) {
+            btn.classList.add("active");
+            updateBackground(btnImg);
+
+            // ✅ CORE LOGIC
+            await turnOffAll();
+            await turnOnZone(corridorZone);
+
+          } else {
+            updateBackground(null);
+
+            // ✅ Turn everything OFF
+            await turnOffAll();
+          }
+        });
+      });
+    }
+  });
+});
+
+    
+  </script>
+  <style>
+    /* Background */
+    .bg-section {
+      background-image: url("{{ url_for('static', filename='img/rua.png') }}");
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+    }
+
+    
+
+    .sidebar {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 19%;
+      max-height: 100vh;
+      overflow-y: auto;
+      height: 100vh;
+
+      background: #373a36;
+      border-radius: 0px;
+      padding-right: 15px;
+      color: #fff;
+
+      display: flex;
+    }
+
+    /* LEFT GOLDEN DESIGN */
+    .sidebar-design {
+      width: 50px;
+      min-height: 100vh;
+      height: 100vh;
+      background-image: url("{{ url_for('static', filename='img/golden-design.png') }}");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    /* RIGHT CONTENT AREA */
+    .sidebar-content {
+      flex: 1;
+      padding: 15px;
+      overflow-y: auto;
+    }
+
+    /* Cluster blocks */
+    .cluster {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .cluster-title {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 8px;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 10px;
+      font-family: "Majalla Bold", sans-serif;
+      font-size: 38px;
+      letter-spacing: 1px;
+    }
+
+    /* Toggle Switch */
+    .toggle {
+      display: flex;
+      align-items: center;
+      font-family: "Majalla", sans-serif;
+      font-size: 22px;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    .toggle input {
+      display: none;
+    }
+
+    /* Switch UI */
+    .toggle span {
+      width: 38px;
+      height: 20px;
+      background: #555;
+      border-radius: 20px;
+      margin-right: 10px;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    .toggle span::before {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: #ccc;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      transition: 0.3s;
+    }
+
+    /* Checked state */
+    .toggle input:checked+span {
+      background: #bd9b60;
+    }
+
+    .toggle input:checked+span::before {
+      transform: translateX(18px);
+      background: white;
+    }
+
+    .corridor-options {
+      display: flex;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .corridor-btn {
+      width: 45px;
+      height: 45px;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-family: "Majalla Bold", sans-serif;
+      font-size: 22px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .corridor-btn.active {
+      background: #d6b36a;
+      color: #fff;
+    }
+
+    .corridor-btn:hover {
+      background: #d6b36a;
+    }
+  </style>
+</body>
+
+</html>

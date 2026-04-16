@@ -1,0 +1,722 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rua Al Madina</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/al-ansar-Logo_Gold.png') }}" />
+    <!-- Bootstrap CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <style>
+        @font-face {
+            font-family: "Majalla";
+            src: url("{{ url_for('static', filename='fonts/majalla.ttf') }}") format("truetype");
+            font-weight: normal;
+        }
+        
+        @font-face {
+            font-family: "Majalla Bold";
+            src: url("{{ url_for('static', filename='fonts/majallab.ttf') }}") format("truetype");
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <!-- Background Section -->
+        <div class="bg-section d-flex justify-content-center align-items-center text-white">
+            <!-- Right-side Logo -->
+            <img src="{{ url_for('static', filename='img/logo.png') }}" class="right-logo" alt="Logo">
+            <!-- <h2>Main Content Area</h2> -->
+            <!-- 🔥 ZONE LAYERS -->
+
+            <!-- Super Blocks -->
+            <img src="{{ url_for('static', filename='img/sb02.png') }}" class="zone-layer" id="sb02">
+            <img src="{{ url_for('static', filename='img/sb03.png') }}" class="zone-layer" id="sb03">
+            <img src="{{ url_for('static', filename='img/sb04.png') }}" class="zone-layer" id="sb04">
+            <img src="{{ url_for('static', filename='img/al_ansar.png') }}" class="zone-layer" id="al_ansar">
+            <img src="{{ url_for('static', filename='img/sb07.png') }}" class="zone-layer" id="sb07">
+            <img src="{{ url_for('static', filename='img/sb08.png') }}" class="zone-layer" id="sb08">
+
+            <!-- Districts -->
+            <img src="{{ url_for('static', filename='img/d01.png') }}" class="zone-layer" id="d01">
+            <img src="{{ url_for('static', filename='img/d09.png') }}" class="zone-layer" id="d09">
+            <img src="{{ url_for('static', filename='img/d10.png') }}" class="zone-layer" id="d10">
+
+            <!-- Corridors -->
+            <!-- <img src="{{ url_for('static', filename='img/crowd_corridor_1.png') }}" class="zone-layer" id="crowd_corridor_1">
+      <img src="{{ url_for('static', filename='img/crowd_corridor_2.png') }}" class="zone-layer" id="crowd_corridor_2">
+      <img src="{{ url_for('static', filename='img/crowd_corridor_3.png') }}" class="zone-layer" id="crowd_corridor_3">
+      <img src="{{ url_for('static', filename='img/crowd_corridor_4.png') }}" class="zone-layer" id="crowd_corridor_4">
+      <img src="{{ url_for('static', filename='img/crowd_corridor_5.png') }}" class="zone-layer" id="crowd_corridor_5"> -->
+
+            <!-- Roads & Surroundings -->
+            <!-- <img src="{{ url_for('static', filename='img/king_abdulaziz_road.png') }}" class="zone-layer"
+        id="king_abdulaziz_road">
+      <img src="{{ url_for('static', filename='img/haram_boulevard.png') }}" class="zone-layer" id="haram_boulevard">
+      <img src="{{ url_for('static', filename='img/al_amidah_road.png') }}" class="zone-layer" id="al_amidah_road">
+      <img src="{{ url_for('static', filename='img/prince_mohammed_bin_salman_road.png') }}" class="zone-layer"
+        id="prince_mohammed_bin_salman_road">
+      <img src="{{ url_for('static', filename='img/salman_bin_abdulaziz_road.png') }}" class="zone-layer"
+        id="salman_bin_abdulaziz_road">
+      <img src="{{ url_for('static', filename='img/substation_and_utilities.png') }}" class="zone-layer"
+        id="substation_and_utilities"> -->
+            <img src="{{ url_for('static', filename='img/masjid_al_haram.png') }}" class="zone-layer" id="masjid_al_haram">
+            <!-- <img src="{{ url_for('static', filename='img/district_cooling_plant_1.png') }}" class="zone-layer"
+        id="district_cooling_plant_1"> -->
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-design"></div>
+
+            <div class="sidebar-content">
+
+                <!-- Super Blocks -->
+                <div class="cluster" data-type="checkbox">
+                    <div class="cluster-title">Super Blocks</div>
+
+                    <label class="toggle master">
+                        <input type="checkbox" data-img="super_blocks_all.png" data-zone="super_blocks" />
+                        <span></span> All ON/OFF
+                    </label>
+
+                    <label class="toggle"><input type="checkbox" data-img="sb02.png" data-zone="sb02" /><span></span>
+                        Al-Adl</label>
+                    <label class="toggle"><input type="checkbox" data-img="sb03.png" data-zone="sb03" /><span></span>
+                        Al-Naeem</label>
+                    <label class="toggle"><input type="checkbox" data-img="sb04.png" data-zone="sb04" /><span></span>
+                        Al-Ijabah</label>
+                    <label class="toggle"><input type="checkbox" data-img="al_ansar.png"
+                            data-zone="al_ansar" /><span></span>
+                        Al-Ansar</label>
+                    <label class="toggle"><input type="checkbox" data-img="sb07.png" data-zone="sb07" /><span></span>
+                        Al-Ehsan</label>
+                    <label class="toggle"><input type="checkbox" data-img="sb08.png" data-zone="sb08" /><span></span>
+                        Al-Yusr</label>
+                </div>
+
+                <!-- Districts -->
+                <div class="cluster" data-type="checkbox">
+                    <div class="cluster-title">Districts</div>
+
+                    <label class="toggle master">
+                        <input type="checkbox" data-img="districts.png" data-zone="districts" />
+                        <span></span> All ON/OFF
+                    </label>
+
+                    <label class="toggle"><input type="checkbox" data-img="d01.png"
+                            data-zone="d01" /><span></span>Al-khair</label>
+                    <label class="toggle"><input type="checkbox" data-img="d09.png" data-zone="d09" /><span></span>
+                        Al-Rahma</label>
+                    <label class="toggle"><input type="checkbox" data-img="d10.png" data-zone="d10" /><span></span>
+                        Al-Rawdhah</label>
+                </div>
+                <!-- Crowd Corridors (Buttons Only) -->
+                <div class="cluster" data-type="button">
+                    <div class="cluster-title">Crowd Corridors</div>
+
+                    <label class="toggle master">
+                        <input type="checkbox" data-img="" data-zone="crowd_corridors_all" />
+                        <span></span> All ON/OFF
+                    </label>
+
+                    <div class="corridor-options">
+                        <button class="corridor-btn" data-img="" data-zone="crowd_corridor_1" disabled>1</button>
+                        <button class="corridor-btn" data-img="" data-zone="crowd_corridor_2" disabled>2</button>
+                        <button class="corridor-btn" data-img="" data-zone="crowd_corridor_3" disabled>3</button>
+                        <button class="corridor-btn" data-img="" data-zone="crowd_corridor_4" disabled>4</button>
+                        <button class="corridor-btn" data-img="" data-zone="crowd_corridor_5" disabled>5</button>
+                    </div>
+                </div>
+                <!-- Roads & Surroundings -->
+                <div class="cluster" data-type="checkbox">
+                    <div class="cluster-title">Roads & Surroundings</div>
+
+                    <label class="toggle master">
+                        <input type="checkbox" data-img="" data-zone="roadnames_surroundings" />
+                        <span></span> All ON/OFF
+                    </label>
+                    <label class="toggle"><input type="checkbox" data-img="masjid_al_haram.png"
+                            data-zone="masjid_al_haram" /><span></span> Masjid Al Haram</label>
+
+                    <label class="toggle"><input type="checkbox" data-img="" data-zone="main_roads" /><span></span> Main
+                        Roads</label>
+                    <div class="roads-list">
+                        <p>King Abdulaziz Road</p>
+                        <p>Haram Boulevard</p>
+                        <p>Al Amidah Road</p>
+                        <p>Prince Mohammed Bin Salman Road</p>
+                        <p>Salman Bin Abdulaziz Road</p>
+                    </div>
+                    <!-- <label class="toggle"><input type="checkbox" data-img=""
+                            data-zone="king_abdulaziz_road" /><span></span> King
+                        Abdulaziz
+                        Road</label>
+                    <label class="toggle"><input type="checkbox" data-img="" data-zone="haram_boulevard" /><span></span>
+                        Haram
+                        Boulevard</label>
+                    <label class="toggle"><input type="checkbox" data-img="" data-zone="al_amidah_road" /><span></span>
+                        Al Amidah
+                        Road</label>
+                    <label class="toggle"><input type="checkbox" data-img=""
+                            data-zone="prince_mohammed_bin_salman_road" /><span></span> Prince Mohammed
+                        Bin</label>
+                    <label class="toggle"><input type="checkbox" data-img=""
+                            data-zone="salman_bin_abdulaziz_road" /><span></span>
+                        Salman Bin
+                        Abdulaziz Road</label> -->
+                    <label class="toggle"><input type="checkbox" data-img=""
+                            data-zone="substation_and_utilities" /><span></span>
+                        Substation & Utilities</label>
+                    <!-- <label class="toggle"><input type="checkbox" data-img="" data-zone="district_cooling_plant_1" /><span></span>
+            District
+            Cooling Plant 1</label> -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const allClusters = document.querySelectorAll(".cluster");
+
+            const API_BASE_URL_1 = "http://rua.local:5000";
+            const API_BASE_URL_2 = "http://ruaextender.local:5000";
+
+            // ------------------------------
+            // ZONE MAPPING
+            // ------------------------------
+            const PI_1_ZONES = [
+                "sb02", "sb03", "sb04", "al_ansar", "sb07", "sb08",
+                "d01", "d09", "d10", "districts", "super_blocks"
+            ];
+
+            const PI_2_ZONES = [
+                "crowd_corridor_1", "crowd_corridor_2", "crowd_corridor_3", "crowd_corridor_4", "crowd_corridor_5",
+                "king_abdulaziz_road", "haram_boulevard", "al_amidah_road",
+                "prince_mohammed_bin_salman_road", "salman_bin_abdulaziz_road",
+                "substation_and_utilities", "masjid_al_haram", "district_cooling_plant_1",
+                "crowd_corridors_all", "roadnames_surroundings", "main_roads"
+            ];
+
+            function getApiBaseUrl(zone) {
+                if (PI_1_ZONES.includes(zone)) return API_BASE_URL_1;
+                if (PI_2_ZONES.includes(zone)) return API_BASE_URL_2;
+                return API_BASE_URL_1;
+            }
+
+            // ------------------------------
+            // ZONE LAYER LOGIC (MULTI)
+            // ------------------------------
+            function toggleZoneLayer(zoneName, isActive) {
+                const layer = document.getElementById(zoneName);
+                if (!layer) return;
+
+                layer.style.display = isActive ? "block" : "none";
+            }
+
+            // ------------------------------
+            // API HELPERS
+            // ------------------------------
+            async function turnOnZone(zoneName) {
+                const baseUrl = getApiBaseUrl(zoneName);
+                try {
+                    await fetch(`${baseUrl}/on_zone/${zoneName}`, {
+                        method: 'POST'
+                    });
+                    await syncUIWithBackend();
+                } catch (err) {
+                    console.error("Error ON:", err);
+                }
+            }
+
+            async function turnOffZone(zoneName) {
+                const baseUrl = getApiBaseUrl(zoneName);
+                try {
+                    await fetch(`${baseUrl}/off_zone/${zoneName}`, {
+                        method: 'POST'
+                    });
+                    await syncUIWithBackend();
+                } catch (err) {
+                    console.error("Error OFF:", err);
+                }
+            }
+
+            // ------------------------------
+            // 🔄 SYNC BOTH PIs
+            // ------------------------------
+            // let lastState = {};
+
+            // async function syncUIWithBackend() {
+            //     try {
+            //         const [res1, res2] = await Promise.all([
+            //             fetch(`${API_BASE_URL_1}/status`),
+            //             fetch(`${API_BASE_URL_2}/status`)
+            //         ]);
+
+            //         const data1 = await res1.json();
+            //         const data2 = await res2.json();
+
+            //         const combined = {
+            //             ...data1,
+            //             ...data2
+            //         };
+
+            //         if (JSON.stringify(combined) === JSON.stringify(lastState)) return;
+            //         lastState = combined;
+
+            //         Object.entries(combined).forEach(([zone, state]) => {
+            //             const isActive = state === "ON";
+
+            //             toggleZoneLayer(zone, isActive);
+
+            //             const checkbox = document.querySelector(`input[data-zone="${zone}"]`);
+            //             if (checkbox) checkbox.checked = isActive;
+
+            //             const button = document.querySelector(`.corridor-btn[data-zone="${zone}"]`);
+            //             if (button) {
+            //                 button.classList.toggle("active", isActive);
+            //             }
+            //         });
+
+            //         // Sync masters
+            //         allClusters.forEach(cluster => {
+            //             const master = cluster.querySelector(".master input");
+
+            //             if (cluster.dataset.type === "checkbox") {
+            //                 const children = cluster.querySelectorAll(".toggle:not(.master) input");
+            //                 master.checked = Array.from(children).every(cb => cb.checked);
+            //             }
+
+            //             if (cluster.dataset.type === "button") {
+            //                 const buttons = cluster.querySelectorAll(".corridor-btn");
+            //                 master.checked = Array.from(buttons).every(btn =>
+            //                     btn.classList.contains("active")
+            //                 );
+            //             }
+            //         });
+
+            //     } catch (err) {
+            //         console.error("Sync error:", err);
+            //     }
+            // }
+
+            let lastState = {};
+
+            // group mapping
+            const mainRoadZones = [
+                "king_abdulaziz_road",
+                "haram_boulevard",
+                "al_amidah_road",
+                "prince_mohammed_bin_salman_road",
+                "salman_bin_abdulaziz_road"
+            ];
+
+            async function syncUIWithBackend() {
+                try {
+                    const [res1, res2] = await Promise.all([
+                        fetch(`${API_BASE_URL_1}/status`),
+                        fetch(`${API_BASE_URL_2}/status`)
+                    ]);
+
+                    const data1 = await res1.json();
+                    const data2 = await res2.json();
+
+                    const combined = {
+                        ...data1,
+                        ...data2
+                    };
+
+                    if (JSON.stringify(combined) === JSON.stringify(lastState)) return;
+                    lastState = combined;
+
+                    // ✅ ORIGINAL behavior (do NOT remove)
+                    Object.entries(combined).forEach(([zone, state]) => {
+                        const isActive = String(state).toUpperCase() === "ON";
+
+                        toggleZoneLayer(zone, isActive);
+
+                        const checkbox = document.querySelector(`input[data-zone="${zone}"]`);
+                        if (checkbox) checkbox.checked = isActive;
+
+                        const button = document.querySelector(`.corridor-btn[data-zone="${zone}"]`);
+                        if (button) {
+                            button.classList.toggle("active", isActive);
+                        }
+                    });
+
+                    // ✅ NEW: handle Main Roads as a virtual zone
+                    const mainToggle = document.querySelector(`input[data-zone="main_roads"]`);
+
+                    if (mainToggle) {
+                        const allOn = mainRoadZones.every(zone =>
+                            String(combined[zone]).toUpperCase() === "ON"
+                        );
+
+                        const allOff = mainRoadZones.every(zone =>
+                            String(combined[zone]).toUpperCase() === "OFF"
+                        );
+
+                        // update UI properly
+                        if (mainToggle.checked !== allOn) {
+                            mainToggle.checked = allOn;
+                        }
+
+                        // optional UX (partial state)
+                        mainToggle.indeterminate = !allOn && !allOff;
+                    }
+
+                    // ✅ keep cluster logic
+                    allClusters.forEach(cluster => {
+                        const master = cluster.querySelector(".master input");
+
+                        if (!master) return;
+
+                        if (cluster.dataset.type === "checkbox") {
+                            const children = cluster.querySelectorAll(".toggle:not(.master) input");
+                            if (children.length) {
+                                master.checked = Array.from(children).every(cb => cb.checked);
+                            }
+                        }
+
+                        if (cluster.dataset.type === "button") {
+                            const buttons = cluster.querySelectorAll(".corridor-btn");
+                            if (buttons.length) {
+                                master.checked = Array.from(buttons).every(btn =>
+                                    btn.classList.contains("active")
+                                );
+                            }
+                        }
+                    });
+
+                } catch (err) {
+                    console.error("Sync error:", err);
+                }
+            }
+            syncUIWithBackend();
+            // setInterval(syncUIWithBackend, 13000);
+
+            // ------------------------------
+            // CLUSTERS LOGIC
+            // ------------------------------
+            allClusters.forEach((cluster) => {
+                const masterToggle = cluster.querySelector('.master input');
+
+                // ==============================
+                // CHECKBOX MODE
+                // ==============================
+                if (cluster.dataset.type === "checkbox") {
+                    const children = cluster.querySelectorAll('.toggle:not(.master) input');
+
+                    function syncMaster() {
+                        masterToggle.checked = Array.from(children).every(cb => cb.checked);
+                    }
+
+                    // MASTER
+                    masterToggle.addEventListener("click", async(e) => {
+                        const isNowChecked = e.target.checked;
+                        const clusterZone = e.target.dataset.zone;
+
+                        children.forEach(cb => {
+                            cb.checked = isNowChecked;
+                            toggleZoneLayer(cb.dataset.zone, isNowChecked);
+                        });
+
+                        if (isNowChecked) await turnOnZone(clusterZone);
+                        else await turnOffZone(clusterZone);
+                    });
+
+                    // CHILD
+                    children.forEach(child => {
+                        child.addEventListener("click", async(e) => {
+                            const isNowChecked = e.target.checked;
+                            const zoneName = e.target.dataset.zone;
+
+                            toggleZoneLayer(zoneName, isNowChecked);
+
+                            if (isNowChecked) await turnOnZone(zoneName);
+                            else await turnOffZone(zoneName);
+
+                            syncMaster();
+                        });
+                    });
+                }
+
+                // ==============================
+                // BUTTON MODE
+                // ==============================
+                if (cluster.dataset.type === "button") {
+                    const buttons = cluster.querySelectorAll(".corridor-btn");
+
+                    function syncMaster() {
+                        masterToggle.checked = Array.from(buttons).every(btn =>
+                            btn.classList.contains("active")
+                        );
+                    }
+
+                    // MASTER
+                    masterToggle.addEventListener("click", async(e) => {
+                        const isNowChecked = e.target.checked;
+                        const clusterZone = e.target.dataset.zone;
+
+                        buttons.forEach(btn => {
+                            btn.classList.toggle("active", isNowChecked);
+                            toggleZoneLayer(btn.dataset.zone, isNowChecked);
+                        });
+
+                        if (isNowChecked) await turnOnZone(clusterZone);
+                        else await turnOffZone(clusterZone);
+                    });
+
+                    // BUTTON
+                    buttons.forEach(btn => {
+                        btn.addEventListener("click", async() => {
+                            const isNowActive = btn.classList.contains("active");
+                            const zoneName = btn.dataset.zone;
+
+                            btn.classList.toggle("active", !isNowActive);
+                            toggleZoneLayer(zoneName, !isNowActive);
+
+                            if (!isNowActive) await turnOnZone(zoneName);
+                            else await turnOffZone(zoneName);
+
+                            syncMaster();
+                        });
+                    });
+                }
+            });
+            document.addEventListener("visibilitychange", () => {
+                if (!document.hidden) {
+                    syncUIWithBackend(); // 🔥 refresh when user comes back
+                }
+            });
+        });
+    </script>
+    <style>
+        /* Background */
+        
+        .bg-section {
+            background-image: url("{{ url_for('static', filename='img/rua.png') }}");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            position: relative;
+        }
+        
+        html,
+        body {
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .zone-layer {
+            position: absolute;
+            opacity: 75%;
+            display: none;
+        }
+        
+        @media only screen and (min-width: 1024px) and (max-width: 1366px) {
+            .zone-layer {
+                height: 100%;
+                display: none;
+            }
+            .sidebar {
+                width: 16% !important;
+            }
+            .sidebar-design {
+                width: 15px !important;
+            }
+            .cluster-title {
+                font-size: 25px !important;
+            }
+            .toggle {
+                font-size: 15px !important;
+            }
+            .corridor-btn {
+                width: 25px !important;
+                height: 25px !important;
+                font-size: 16px !important;
+            }
+            .roads-list {
+                font-size: 15px !important;
+            }
+        }
+        
+        .sidebar {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 19%;
+            max-height: 100vh;
+            overflow-y: auto;
+            height: 100vh;
+            background: #373a36;
+            border-radius: 0px;
+            padding-right: 15px;
+            color: #fff;
+            display: flex;
+        }
+        /* LEFT GOLDEN DESIGN */
+        
+        .sidebar-design {
+            width: 50px;
+            min-height: 100vh;
+            height: 100vh;
+            background-image: url("{{ url_for('static', filename='img/golden-design.png') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        /* RIGHT CONTENT AREA */
+        
+        .sidebar-content {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+        }
+        /* Cluster blocks */
+        
+        .cluster {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .cluster-title {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-family: "Majalla Bold", sans-serif;
+            font-size: 38px;
+            letter-spacing: 1px;
+        }
+        /* Toggle Switch */
+        
+        .toggle {
+            display: flex;
+            align-items: center;
+            font-family: "Majalla", sans-serif;
+            font-size: 22px;
+            margin: 8px 0;
+            cursor: pointer;
+        }
+        
+        .toggle input {
+            display: none;
+        }
+        /* Switch UI */
+        
+        .toggle span {
+            width: 38px;
+            height: 20px;
+            background: #555;
+            border-radius: 20px;
+            margin-right: 10px;
+            position: relative;
+            transition: 0.3s;
+        }
+        
+        .toggle span::before {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #ccc;
+            border-radius: 50%;
+            top: 2px;
+            left: 2px;
+            transition: 0.3s;
+        }
+        /* Checked state */
+        
+        .toggle input:checked+span {
+            background: #bd9b60;
+        }
+        
+        .toggle input:checked+span::before {
+            transform: translateX(18px);
+            background: white;
+        }
+        
+        .corridor-options {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        
+        .corridor-btn {
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            font-family: "Majalla Bold", sans-serif;
+            font-size: 22px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .corridor-btn.active {
+            background: #d6b36a;
+            color: #fff;
+        }
+        
+        .corridor-btn:hover {
+            background: #d6b36a;
+        }
+        
+        .corridor-btn:disabled {
+            opacity: 1;
+            /* remove faded look */
+            background: rgba(255, 255, 255, 0.1);
+            /* keep same background */
+            color: #fff;
+            /* keep same text color */
+            cursor: not-allowed;
+            /* optional: show disabled cursor */
+        }
+        
+        .corridor-btn.active:disabled {
+            background: #d6b36a;
+            color: #fff;
+        }
+        
+        .roads-list {
+            margin-left: 48px;
+            /* aligns with text after toggle */
+            font-family: "Majalla", sans-serif;
+            font-size: 20px;
+            color: #fff;
+        }
+        
+        .roads-list p {
+            margin: 4px 0;
+        }
+        
+        .right-logo {
+            position: absolute;
+            top: 20px;
+            /* adjust vertical position */
+            right: 20px;
+            /* stick to right side */
+            width: 120px;
+            /* adjust size */
+            height: auto;
+            z-index: 1000;
+            /* ensure it's above other elements */
+        }
+    </style>
+</body>
+
+</html>
